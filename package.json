@@ -1,0 +1,7 @@
+{
+  "name": "blank-slate",
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

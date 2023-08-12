@@ -1,0 +1,111 @@
+[workspace]
+resolver = "2"
+members = [
+    "server",
+    "client",
+    "app"
+]
+
+[workspace.dependencies]
+leptos = {version = "0.4.8", features = ["nightly", "tracing"]}
+leptos_meta = {version = "0.4.8", features = ["nightly"]}
+leptos_router = {version = "0.4.8", features = ["nightly"]}
+leptos_axum = "0.4.8"
+tokio = { version = "1.30.0", features = ["full"] }
+tower = { version = "0.4.13", features = ["full"] }
+tower-http = { version = "0.4.3", features = ["full"] }
+axum = { version = "0.6.20", features = ["tracing", "http2"] } 
+cfg-if = "1.0.0"
+console_error_panic_hook = "0.1.7"
+http = "0.2.9"
+thiserror = "1.0.44"
+wasm-bindgen = "0.2.87"
+serde = "1.0.183"
+serde_json = "1.0.104"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.17" }
+
+# need to be applied only to wasm build
+[profile.wasm-release]
+inherits = "release"
+opt-level = 'z'
+lto = true
+codegen-units = 1
+
+
+[[workspace.metadata.leptos]]
+# project name
+name = "blank-slate"
+bin-package = "server"
+lib-package = "client"
+
+# The features to use when compiling all targets
+#
+# Optional. Can be extended with the command line parameter --features
+features = []
+
+# The features to use when compiling the bin target
+#
+# Optional. Can be over-ridden with the command line parameter --bin-features
+bin-features = []
+
+# If the --no-default-features flag should be used when compiling the bin target
+#
+# Optional. Defaults to false.
+bin-default-features = false
+
+# The profile to use for the bin target when compiling for release
+#
+# Optional. Defaults to "release".
+# bin-profile-release = "my-release-profile"
+
+# The profile to use for the bin target when compiling for debug
+#
+# Optional. Defaults to "debug".
+# bin-profile-debug = "my-debug-profile"
+
+# The target triple to use when compiling the bin target
+#
+# Optional. Env: LEPTOS_BIN_TARGET_TRIPLE
+# bin-target-triple = "x86_64-pc-windows-msvc"
+
+# The features to use when compiling the lib target
+#
+# Optional. Can be over-ridden with the command line parameter --lib-features
+lib-features = []
+
+# If the --no-default-features flag should be used when compiling the lib target
+#
+# Optional. Defaults to false.
+lib-default-features = false
+
+# The profile to use for the lib target when compiling for release
+#
+# Optional. Defaults to "release".
+lib-profile-release = "wasm-release"
+
+# The profile to use for the lib target when compiling for debug
+#
+# Optional. Defaults to "debug".
+# lib-profile-debug = "my-debug-profile"
+
+# Assets source dir. All files found here will be copied and synchronized to site-root.
+# The assets-dir cannot have a sub directory with the same name/path as site-pkg-dir.
+#
+# Optional. Env: LEPTOS_ASSETS_DIR.
+assets-dir = "public"
+
+# The IP and port (ex: 127.0.0.1:3000) where the server serves the content. Use it in your server setup.
+site-addr = "127.0.0.1:3000"
+
+# The port to use for automatic reload monitoring
+reload-port = 3001
+
+#  The browserlist query used for optimizing the CSS.
+browserquery = "defaults"
+
+# Set by cargo-leptos watch when building with that tool. Controls whether autoreload JS will be included in the head
+watch = false
+
+# The environment Leptos will run in, usually either "DEV" or "PROD"
+env = "DEV"
