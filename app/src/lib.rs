@@ -14,7 +14,8 @@ pub fn App(cx: Scope) -> impl IntoView {
 
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
-        <Stylesheet id="leptos" href="/pkg/start-axum-workspace.css"/>
+        <Stylesheet id="leptos" href="/pkg/blank-slate.css"/>
+        <Link rel="shortcut icon" type_="image/ico" href="/favicon.ico"/>
 
         // sets the document title
         <Title text="Welcome to Leptos"/>
@@ -40,7 +41,15 @@ fn HomePage(cx: Scope) -> impl IntoView {
     };
 
     view! { cx,
-        <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <div class="grid grid-flow-col grid-cols-2 gap-4 m-4">
+            <div class="container mx-auto bg-gray-600 rounded-xl grid grid-cols-1 gap-4 p-2">
+                <h1 class="text-3xl font-bold underline my-2 mx-auto">"Welcome to Leptos!"</h1>
+                <button class="bg-sky-500 hover:bg-sky-700 rounded-full my-2 mx-auto p-2" on:click=on_click>"Click Me: " {count}</button>
+            </div>
+            <div class="container mx-auto bg-gray-600 rounded-xl grid grid-cols-1 gap-4 p-2">
+                <h1 class="text-3xl font-bold underline my-2 mx-auto">"Welcome to Leptos!"</h1>
+                <button class="bg-sky-500 hover:bg-sky-700 rounded-full my-2 mx-auto p-2" on:click=on_click>"Click Me: " {count}</button>
+            </div>
+        </div>
     }
 }

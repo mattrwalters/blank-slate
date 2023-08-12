@@ -109,3 +109,6 @@ watch = false
 
 # The environment Leptos will run in, usually either "DEV" or "PROD"
 env = "DEV"
+
+# [Optional] The source CSS file. If it ends with .sass or .scss then it will be compiled by dart-sass into CSS. The CSS is optimized by Lightning CSS before being written to <site-root>/<site-pkg>/app.css
+style-file = "style/output.css"
