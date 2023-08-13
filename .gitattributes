@@ -2,3 +2,7 @@
 /.yarn/releases/*    binary
 /.yarn/plugins/**/*  binary
 /.pnp.*              binary linguist-generated
+/style/*             linguist-generated
+/Cargo.lock          linguist-generated
+/yarn.lock           linguist-generated
+/.yarnrc.yml         linguist-generated
