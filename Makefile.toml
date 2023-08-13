@@ -1,0 +1,12 @@
+[config]
+unstable_features = ["CTRL_C_HANDLING"]
+default_to_workspace = false
+
+[tasks.tw-watch]
+script = "yarn tailwindcss -i ./input.css -o ./style/output.css --watch"
+
+[tasks.site-watch]
+script = "cargo leptos watch"
+
+[tasks.watch]
+run_task = { name = ["tw-watch", "site-watch"], parallel = true }
