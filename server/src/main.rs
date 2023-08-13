@@ -10,7 +10,6 @@ pub mod fileserv;
 
 #[tokio::main]
 async fn main() {
-
     // Setup tracing
     tracing_subscriber::fmt::init();
 
