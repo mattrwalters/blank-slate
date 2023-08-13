@@ -16,4 +16,24 @@
         "strings": true
       },
       "css.validate": false,
+      "files.exclude": {
+        "**/.yarn/": true,
+        "**/.cargo/": true,
+        "**/.vscode/": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".gitattributes": true,
+        ".gitignore": true,
+        ".pnp.cjs": true,
+        ".pnp.loader.mjs": true,
+        ".taplo.toml": true,
+        ".yarnrc.yml": true,
+        "Cargo.lock": true,
+        "rust-toolchain.toml": true,
+        "yarn.lock": true
+      }
 }
