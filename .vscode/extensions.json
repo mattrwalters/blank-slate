@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "bradlc.vscode-tailwindcss",
+        "rust-lang.rust-analyzer",
+        "adrianwilczynski.toggle-hidden",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates",
+        "aaron-bond.better-comments"
+    ]
+}

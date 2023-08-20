@@ -9,6 +9,7 @@ Built using Leptos.
  - yarn
  - cargo-make
  - cargo-leptos
+ - cargo-deny
 
 # Environment Assumptions
  - Development of this project is intended to be completed on a Windows 11 machine, utilising VSCode and Firefox.
