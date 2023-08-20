@@ -1,0 +1,9 @@
+disallowed-types = [
+    { path = "std::sync::Mutex", reason = "Use the faster & simpler non-poisonable primitives in `parking_lot` instead" },
+    { path = "std::sync::RwLock", reason = "Use the faster & simpler non-poisonable primitives in `parking_lot` instead" },
+    { path = "std::sync::Condvar", reason = "Use the faster & simpler non-poisonable primitives in `parking_lot` instead" },
+    { path = "std::sync::Once", reason = "Use the faster & simpler non-poisonable primitives in `parking_lot` instead" },
+    { path = "std::sync::mpsc::Sender", reason = "Use the non-legacy and faster `crossbeam_channel` crate instead of `std::sync::mpsc`" },
+    { path = "std::sync::mpsc::SyncSender", reason = "Use the non-legacy and faster `crossbeam_channel` crate instead of `std::sync::mpsc`" },
+    { path = "std::sync::mpsc::Receiver", reason = "Use the non-legacy and faster `crossbeam_channel` crate instead of `std::sync::mpsc`" }
+]
