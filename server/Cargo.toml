@@ -4,12 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-app = { path = "../app", default-features = false, features = ["ssr"] }
-leptos = { workspace = true, features = [ "ssr", "tracing" ] }
+app = { path = "../app", default-features = false }
+leptos = { workspace = true, features = [ "tracing" ] }
 leptos_axum.workspace = true
 axum.workspace = true
 tokio.workspace = true
 tower.workspace = true
 tower-http = { workspace = true, features = [ "full" ] }
 tracing.workspace = true
-tracing-subscriber.workspace = true
+tracing-subscriber = { workspace = true, features = ["registry", "env-filter"] }
+tracing-log = { workspace = true }
+log.workspace = true
+
+[features]
+default = ["ssr"]
+ssr = ["leptos/ssr", "app/ssr"]

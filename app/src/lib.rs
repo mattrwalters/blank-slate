@@ -1,6 +1,7 @@
-use leptos::*;
+use leptos::{*, tracing::instrument};
 use leptos_meta::*;
 use leptos_router::*;
+use log::{info, debug, warn, error};
 
 pub mod error_template;
 
@@ -8,6 +9,8 @@ pub mod error_template;
 pub fn App(cx: Scope) -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context(cx);
+
+    info!("Rendering Home page");
 
     view! {
         cx,
@@ -32,12 +35,21 @@ pub fn App(cx: Scope) -> impl IntoView {
 }
 
 /// Renders the home page of your application.
+#[instrument(name = "HomePage")]
 #[component]
 fn HomePage(cx: Scope) -> impl IntoView {
     // Creates a reactive value to update the button
     let (count, set_count) = create_signal(cx, 0);
-    let on_click = move |_| set_count.update(|count| *count += 1);
+    let on_click = move |_| {
+        set_count.update(|count| *count += 1);
+        info!("Counter Hit");
+    };
     
+    info!("Rendering in Home");
+    warn!("Warning Test");
+    debug!("Debug Test");
+    error!("Error Test");
+
     view! { cx,
         <div class="grid grid-flow-col grid-cols-2 gap-4 m-4 space-x-10">
             <div class="container mx-auto bg-gray-600 rounded-xl grid grid-cols-1 gap-4 p-2">

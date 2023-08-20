@@ -7,6 +7,3 @@ script = "yarn tailwindcss -i ./input.css -o ./style/output.css --watch"
 
 [tasks.site-watch]
 script = "cargo leptos watch"
-
-[tasks.watch]
-run_task = { name = ["tw-watch", "site-watch"], parallel = true }
